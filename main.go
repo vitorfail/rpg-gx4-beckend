@@ -1,5 +1,18 @@
 package main
 
+// Adicionar no início do arquivo
+battleManager := battle.NewBattleManager()
+battleManager.Start()
+
+// Modificar a criação dos handlers para incluir o battleManager
+h := handlers.NewHandlers(db, battleManager)
+
+// Adicionar novas rotas
+battleRouter := r.PathPrefix("/battles").Subrouter()
+battleRouter.Use(h.AuthMiddleware)
+battleRouter.HandleFunc("", h.CreateBattle).Methods("POST")
+battleRouter.HandleFunc("/{id}/ws", h.BattleWebsocket).Methods("GET")
+battleRouter.HandleFunc("/{id}/actions", h.SubmitBattleAction).Methods("POST")
 import (
 	"log"
 	"net/http"
