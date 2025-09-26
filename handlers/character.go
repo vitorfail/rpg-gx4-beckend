@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"rpg-backend/models"
+	"rpg-gx4-backend/models"
 )
 
 func (h *AuthHandlers) CreateCharacter(w http.ResponseWriter, r *http.Request) {

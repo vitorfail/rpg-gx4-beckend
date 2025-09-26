@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"net/http"
-	"your-app-name/models"
+	"rpg-gx4-backend/models"
 )
 
 func GetUserByGoogleSub(db *sql.DB) http.HandlerFunc {

@@ -3,7 +3,7 @@ package battle
 import (
     "sync"
     "time"
-    "rpg-backend/models"
+    "rpg-gx4-backend/models"
 )
 
 type BattleManager struct {

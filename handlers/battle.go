@@ -3,8 +3,8 @@ package handlers
 import (
     "encoding/json"
     "net/http"
-    "rpg-backend/battle"
-    "rpg-backend/models"
+    "rpg-gx4-backend/battle"
+    "rpg-gx4-backend/models"
     
     "github.com/gorilla/mux"
     "github.com/gorilla/websocket"

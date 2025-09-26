@@ -1,4 +1,13 @@
 package main
+import (
+	"log"
+	"net/http"
+	"os"
+
+	"github.com/gorilla/mux"
+	"rpg-gx4-backend/database"
+	"rpg-gx4-backend/handlers"
+)
 
 // Adicionar no início do arquivo
 battleManager := battle.NewBattleManager()
@@ -13,15 +22,6 @@ battleRouter.Use(h.AuthMiddleware)
 battleRouter.HandleFunc("", h.CreateBattle).Methods("POST")
 battleRouter.HandleFunc("/{id}/ws", h.BattleWebsocket).Methods("GET")
 battleRouter.HandleFunc("/{id}/actions", h.SubmitBattleAction).Methods("POST")
-import (
-	"log"
-	"net/http"
-	"os"
-
-	"github.com/gorilla/mux"
-	"rpg-backend/database"
-	"rpg-backend/handlers"
-)
 
 func main() {
 	// Inicializar conexão com o banco de dados

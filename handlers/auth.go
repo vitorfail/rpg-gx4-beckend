@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"rpg-backend/models"
+	"rpg-gx4-backend/models"
 )
 
 type AuthHandlers struct {
